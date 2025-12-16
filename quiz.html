@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Quiz - QuickQuiz</title>
+
+    <!-- CSS -->
+    <link rel="stylesheet" href="styles/pages/quiz.css">
+
+    <!-- Material Icon -->
+    <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+    <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined" rel="stylesheet" />
+
+</head>
+
+<body>
+
+    <header>
+        <div class="logo">
+            <i class="material-icons">electric_bolt</i>
+            <h1>QuickQuiz</h1>
+        </div>
+        <nav class="nav-container">
+            <ul class="nav-links">
+                <li class="nav-link"><a href="index.html">Home</a></li>
+                <li class="nav-link"><a href="#" id="highScoresBtn">High Scores</a></li>
+                <li class="nav-link"><a href="#" id="aboutBtn">About</a></li>
+                <button class="btn" id="signInBtn">Sign In</button>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <div class="container">
+            <!-- Progress Bar -->
+            <div class="progress-bar">
+                <div class="progress-content">
+                    <h2>Geography Quiz</h2>
+                    <span class="progress-text">Question 1 of 10</span>
+                </div>
+                <div class="progress" style="width: 10%;"></div>
+            </div>
+
+            <!-- Quiz Container -->
+            <div class="quiz-container">
+                <div class="quiz-content">
+                    <div class="quiz-question">
+                        <img src="./assets/quiz-image.jpeg" alt="Quiz question image">
+                        <span class="label">Geography Quiz</span>
+                        <h2 class="question">What is the capital of France?</h2>
+                    </div>
+                    <div class="quiz-option-container">
+                        <p>Select an answer</p>
+                        <ul class="quiz-options">
+                            <!-- Options will be dynamically inserted here by JavaScript -->
+                            <li class="quiz-option">
+                                <input type="radio" name="quiz-option" id="quiz-option-0">
+                                <label for="quiz-option-0">Loading...</label>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Quiz Footer (Navigation) -->
+            <div class="quiz-footer">
+                <button class="btn btn-secondary">
+                    <i class="material-icons">arrow_back</i>Previous
+                </button>
+                <a href="#">Skip this question</a>
+                <button class="btn btn-primary">
+                    Next <i class="material-icons">arrow_forward</i>
+                </button>
+            </div>
+        </div>
+    </main>
+
+    <footer>
+        <div class="container">
+            <p>&copy; 2025 QuickQuiz. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <!-- JavaScript -->
+    <script src="./scripts/data/quizData.js"></script>
+    <script src="./scripts/quiz/quiz.js"></script>
+
+</body>
+
+</html>

@@ -1,0 +1,82 @@
+@import "../tokens.css";
+
+header {
+    background-color: var(--color-white);
+    border: 1px solid var(--color-gray-100);
+    padding: 16px;
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    z-index: 999;
+}
+
+.container {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+    max-width: 1200px;
+    /* Ditambahkan untuk membuat container lebih lebar */
+    width: 100%;
+    margin: 0 auto;
+    /* Center container */
+    padding: 0 24px;
+    /* Tambahkan padding horizontal */
+}
+
+.logo {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.logo h1 {
+    font-size: var(--text-h3-size);
+    font-weight: var(--text-h3-weight);
+    line-height: var(--text-h3-line);
+}
+
+.logo i {
+    color: var(--color-green-500);
+    font-size: var(--text-h2-size);
+}
+
+.nav-links {
+    display: flex;
+    list-style: none;
+    align-items: center;
+    margin: 0;
+    padding: 0;
+    gap: 24px;
+}
+
+.nav-links li {
+    transition: var(--transition-medium);
+}
+
+.nav-links li a {
+    text-decoration: none;
+    color: var(--color-gray-900);
+}
+
+.nav-links li a:hover {
+    color: var(--color-green-600);
+    transition: var(--transition-medium);
+}
+
+
+footer {
+    background-color: var(--color-gray-100);
+    padding: 16px;
+    text-align: center;
+}
+
+footer p {
+    color: var(--color-gray-900);
+    font-size: var(--font-size-sm);
+    font-weight: var(--font-weight-regular);
+    line-height: var(--line-height-normal);
+}

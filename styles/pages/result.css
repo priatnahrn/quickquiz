@@ -1,0 +1,211 @@
+@import "../../styles/tokens.css";
+@import "../../styles/base.css";
+@import "../../styles/layout.css";
+
+.result-card {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    gap: 16px;
+    padding: 48px;
+    background-color: var(--color-white);
+    border-radius: var(--radius-lg);
+    max-width: 1280px;
+    margin: 0 auto;
+    position: relative;
+    border: 1px solid var(--color-gray-100);
+    margin-top: 120px;
+    margin-bottom: 120px;
+}
+
+/* Decorative top gradient bar */
+.result-card::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 10px;
+    background: linear-gradient(to right,
+            var(--color-white),
+            var(--color-green-500),
+            var(--color-white));
+    border-top-left-radius: var(--radius-lg);
+    border-top-right-radius: var(--radius-lg);
+}
+
+/* Trophy Icon */
+.result-icon {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 80px;
+    height: 80px;
+    border-radius: var(--radius-full);
+    background-color: var(--color-green-50);
+    border: 3px solid var(--color-green-500);
+}
+
+.result-icon i {
+    font-size: 48px;
+    color: var(--color-green-500);
+}
+
+/* Headline */
+.result-title {
+    font-size: var(--font-size-2xl);
+    font-weight: var(--font-weight-semibold);
+    line-height: var(--line-height-normal);
+    color: var(--text-primary);
+    text-align: center;
+}
+
+.score-highlight {
+    font-size: var(--font-size-3xl);
+    font-weight: var(--font-weight-bold);
+    background: linear-gradient(to right,
+            var(--color-green-500),
+            var(--color-green-600));
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+/* Subtext */
+.result-subtitle {
+    font-size: var(--font-size-md);
+    font-weight: var(--font-weight-regular);
+    line-height: var(--line-height-normal);
+    color: var(--text-secondary);
+    text-align: center;
+    max-width: 500px;
+}
+
+.result-subtitle span {
+    font-weight: var(--font-weight-semibold);
+    color: var(--text-primary);
+}
+
+/* Stats Grid */
+.stats-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 16px;
+    width: 100%;
+    max-width: 600px;
+    margin-top: 16px;
+}
+
+.stat-card {
+    padding: 20px;
+    border-radius: var(--radius-md);
+    background-color: var(--color-gray-50);
+    border: 1px solid var(--color-gray-200);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 8px;
+}
+
+.stat-header {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    font-size: var(--font-size-xs);
+    font-weight: var(--font-weight-semibold);
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+}
+
+.stat-correct .stat-header {
+    color: var(--color-green-500);
+}
+
+.stat-incorrect .stat-header {
+    color: var(--color-red-500);
+}
+
+.stat-time .stat-header {
+    color: var(--color-blue-500);
+}
+
+.stat-header i {
+    font-size: 18px;
+}
+
+.stat-value {
+    font-size: var(--font-size-2xl);
+    font-weight: var(--font-weight-bold);
+    color: var(--text-primary);
+}
+
+/* Action Buttons */
+.result-actions {
+    display: flex;
+    gap: 16px;
+    width: 100%;
+    max-width: 500px;
+    margin-top: 16px;
+}
+
+.result-actions .btn {
+    flex: 1;
+    padding: 12px 24px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+}
+
+.result-actions .btn i {
+    font-size: 20px;
+}
+
+/* Back Link */
+.result-footer {
+    margin-top: 16px;
+}
+
+.result-footer a {
+    display: inline-flex;
+    align-items: center;
+    gap: 4px;
+    color: var(--text-secondary);
+    text-decoration: none;
+    font-size: var(--font-size-sm);
+    font-weight: var(--font-weight-medium);
+    transition: var(--transition-fast);
+}
+
+.result-footer a:hover {
+    color: var(--color-green-500);
+}
+
+.result-footer i {
+    font-size: 16px;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .result-card {
+        padding: 36px;
+        margin: 36px;
+    }
+
+    .result-title {
+        font-size: var(--font-size-xl);
+    }
+
+    .stats-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .result-actions {
+        flex-direction: column;
+    }
+
+    .result-actions .btn {
+        width: 100%;
+    }
+}

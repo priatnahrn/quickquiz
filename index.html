@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Quick Quiz - Free Online Quiz</title>
+
+    <!-- CSS -->
+    <link rel="stylesheet" href="styles/pages/landing.css">
+
+    <!-- Material Icon -->
+    <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+    <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined" rel="stylesheet" />
+
+    <style>
+        /* Category Selector Styles */
+        .category-selector {
+            display: flex;
+            flex-direction: column;
+            gap: 12px;
+            margin-bottom: 20px;
+            width: 100%;
+        }
+
+        .category-label {
+            font-size: var(--font-size-sm);
+            color: var(--text-secondary);
+            font-weight: var(--font-weight-medium);
+            text-align: center;
+        }
+
+        .category-options {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 10px;
+        }
+
+        .category-btn {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 6px;
+            padding: 12px;
+            background-color: var(--color-gray-50);
+            border: 2px solid var(--color-gray-200);
+            border-radius: var(--radius-md);
+            cursor: pointer;
+            transition: all 0.3s ease;
+            font-family: var(--font-sans);
+        }
+
+        .category-btn:hover {
+            background-color: var(--color-gray-100);
+            border-color: var(--color-gray-300);
+            transform: translateY(-2px);
+        }
+
+        .category-btn.active {
+            background-color: var(--color-green-50);
+            border-color: var(--color-green-500);
+        }
+
+        .category-icon {
+            font-size: 28px;
+        }
+
+        .category-name {
+            font-size: var(--font-size-xs);
+            font-weight: var(--font-weight-semibold);
+            color: var(--text-primary);
+        }
+
+        @media (max-width: 768px) {
+            .category-options {
+                grid-template-columns: repeat(2, 1fr);
+            }
+        }
+    </style>
+
+</head>
+
+<body>
+
+    <header>
+        <div class="logo">
+            <i class="material-icons">electric_bolt</i>
+            <h1>QuickQuiz</h1>
+        </div>
+        <nav class="nav-container">
+            <ul class="nav-links">
+                <li class="nav-link"><a href="#" id="highScoresBtn">High Scores</a></li>
+                <li class="nav-link"><a href="#" id="aboutBtn">About</a></li>
+                <button class="btn btn-secondary" id="signInBtn">Sign In</button>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <div class="container">
+            <div class="quiz-container">
+                <div class="icon-container">
+                    <span class="material-symbols-outlined">
+                        psychology_alt
+                    </span>
+                </div>
+                <div class="quiz-content">
+                    <h2>Master the <br> <span>QuickQuiz</span></h2>
+                    <p>Ready to challenge yourself? <span>10 questions, 60 seconds.</span> <br>
+                        See how fast you can go.</p>
+
+                    <!-- Category Selector -->
+                    <div class="category-selector">
+                        <p class="category-label">Choose your category:</p>
+                        <div class="category-options">
+                            <button class="category-btn" data-category="geography">
+                                <span class="category-icon">🗺️</span>
+                                <span class="category-name">Geography</span>
+                            </button>
+                            <button class="category-btn" data-category="science">
+                                <span class="category-icon">🔬</span>
+                                <span class="category-name">Science</span>
+                            </button>
+                            <button class="category-btn" data-category="history">
+                                <span class="category-icon">📜</span>
+                                <span class="category-name">History</span>
+                            </button>
+                            <button class="category-btn" data-category="technology">
+                                <span class="category-icon">💻</span>
+                                <span class="category-name">Technology</span>
+                            </button>
+                        </div>
+                    </div>
+
+                    <button class="btn btn-primary" id="startQuizBtn">
+                        Start Quiz
+                        <span class="material-symbols-outlined">arrow_forward</span>
+                    </button>
+                </div>
+                <!-- Trust / Social Proof -->
+                <div class="quiz-participant">
+                    <div class="participant-content">
+                        <img alt="User avatar 1" class="participant-avatar"
+                            src="https://lh3.googleusercontent.com/aida-public/AB6AXuAfX__ctFOlntw1ZCcSsjnqQSUGtF14_0RSLIOtk5FvCjHBrpDNXlZohe5P7QL3VONjzO3uv6dAItIkhWVnMlEwA7Tf9HrqRrBFhJd1-huCnLI8iuuKF11ojbzg4tOkETJJaSO_FuO7p5W9DfmtpdZmWSsPSp3q0bNPwgMQo5rhEvl8JsvkU7BJ6lSQx7q1CR--mQocWCRPf9rNrQGTaIdKC2opECKcJbUYqXSogG5vJhvNsJ3ewgd53uQ3vmBvQiwmyUdv-pxKjWg" />
+                        <img alt="User avatar 2" class="participant-avatar"
+                            src="https://lh3.googleusercontent.com/aida-public/AB6AXuAGsM7xQ2ucmLN1lLcTLUBbbOGRA8oFTevvxiupPfZc_pfOXHoO7yrUaPmCXYdgZ-gDtCtBpgIp6She-9mJ0YBTVgM_AEDOjXpK9pkxBkvB2eAqkMciui-Q38-GixvNRDFA_0CE4cwxknOgRMdCSH6NZ4-YtZdKolQcz_988i0W3pE0X8fqmm5K_tRBuLsMR0WQUnERxGztDNW3j5pkpm6x26nGcvKfCnhoU8Jt30M7TUlF5tThgcYcR6pXXWR6xTDHpaYqUWHn5mM" />
+                        <img alt="User avatar 3" class="participant-avatar"
+                            src="https://lh3.googleusercontent.com/aida-public/AB6AXuDoEc24Q8JvF6cVQywTY3vhV8RhbzleBjWtvimOFUBRSpfiIdUblbLugjYIol0voVARyB9KZ96eWDjQI7iBavBGCSWpQXThRlBydcf1HeAEJbwOy0US0BPWYNzyTRDokFwkVdxzKN21B2I0lnbZvZWfI-GhmFiuE7JhNjhJLRiWZh2a0sCJ3YsxEs2ughR0d16e4rHzBMRBmgUAdIRA4nS8UnfCdvGKvJQI6rDp-GXFS8JRz2TfMsqgvw1Wh0SqHuowUMMMSyyBxNo" />
+                    </div>
+                    <span class="participant-text">1k+ players today</span>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <footer>
+        <p>&copy; 2025 QuickQuiz. All rights reserved.</p>
+    </footer>
+
+    <!-- JavaScript -->
+    <script src="./scripts/main.js"></script>
+
+</body>
+
+</html>
